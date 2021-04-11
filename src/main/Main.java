@@ -7,10 +7,7 @@ import java.util.*;
 
 public class Main {
 
-    //https://programmers.co.kr/learn/courses/30/lessons/12925
-    public static int 문자열을정수로바꾸기(String s) {
-        return Integer.parseInt(s);
-    }
+
 
     //https://programmers.co.kr/learn/courses/30/lessons/12930
     public static String 이상한문자만들기(String s) {
