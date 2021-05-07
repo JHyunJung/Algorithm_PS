@@ -1,13 +1,10 @@
 package main;
 
-import com.sun.tools.javac.util.Pair;
-
 import java.util.*;
 
 
+
 public class Main {
-
-
 
     //https://programmers.co.kr/learn/courses/30/lessons/12930
     public static String 이상한문자만들기(String s) {
@@ -340,17 +337,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        
 
-        String[] enroll = {"john", "mary", "edward", "sam", "emily", "jaimie", "tod", "young"};
-        String[] refer = {"-", "-", "mary", "edward", "mary", "mary", "jaimie", "edward"};
-        String[] seller = {"young", "john", "tod", "emily", "mary"};
-        int[] amount = {12, 4, 2, 5, 10};
-
-
-        int[] result = solution(enroll, refer, seller, amount);
-        for (int i = 0; i < result.length; i++) {
-            System.out.println(result[i]);
-        }
     }
 }
 
