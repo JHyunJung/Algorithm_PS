@@ -1,10 +1,6 @@
 package main;
 
-import jdk.internal.util.xml.impl.Pair;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Stack;
+import java.util.*;
 
 public class Programmers {
 
@@ -135,18 +131,53 @@ public class Programmers {
         return answer;
     }
 
-    public static int[] solution(String[] genres, int[] plays){
-        int[] answer = {};
-        String[] most_genres = new String[genres.length];
-        HashMap<String, Integer> hm = new HashMap<>();
+    //https://programmers.co.kr/learn/courses/30/lessons/76501?language=java
+    public static int 음양더하기(int[] absolutes, boolean[] signs){
+        int answer = 0;
 
-        for(int i=0; i<genres.length; i++){
-            hm.put(genres[i], hm.getOrDefault(genres[i], 0) + plays[i]);
+        for(int i=0; i< absolutes.length; i++){
+            answer += signs[i] ? absolutes[i] : -absolutes[i];
         }
 
+        return answer;
+    }
+
+    //https://programmers.co.kr/learn/courses/30/lessons/77884?language=java
+    public static int[] 두개뽑아서더하기(int[] numbers){
+        ArrayList<Integer> list = new ArrayList<>();
+
+        int result = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                result = numbers[i] + numbers[j];
+                if (!list.contains(result)) {
+                    list.add(result);
+                }
+            }
+        }
+
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+
+        Arrays.sort(answer);
 
         return answer;
-
-
     }
+
+    public static String 가운데글자가져오기(String s){
+        String answer = "";
+
+        if (s.length() % 2 == 0) {
+            answer += s.charAt(s.length()/2-1);
+            answer += s.charAt(s.length()/2);
+        } else {
+            answer += s.charAt(s.length()/2);
+        }
+        return answer;
+    }
+
+
 }
