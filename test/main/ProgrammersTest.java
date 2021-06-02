@@ -54,4 +54,31 @@ class ProgrammersTest {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    void 괄호회전하기() {
+        String s = "[](){}";
+        int expected = 3;;
+        int result = Programmers.괄호회전하기(s);
+
+        assertEquals(expected, result);
+
+        s = "}]()[{";
+        expected = 2;
+        result = Programmers.괄호회전하기(s);
+
+        assertEquals(expected, result);
+
+        s = "[)(]]";
+        expected = 0;
+        result = Programmers.괄호회전하기(s);
+
+        assertEquals(expected, result);
+
+        s = "}}}";
+        expected = 0;
+        result = Programmers.괄호회전하기(s);
+
+        assertEquals(expected, result);
+    }
 }

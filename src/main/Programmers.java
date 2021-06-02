@@ -179,5 +179,57 @@ public class Programmers {
         return answer;
     }
 
+    public static int 괄호회전하기(String s){
+        int answer = 0;
+        String temp;
+        for(int i=0; i<s.length(); i++){
+            temp = "";
+            temp += s.substring(i, s.length());
+            temp += s.substring(0,i);
+
+            if(checkPair(temp))
+                answer++;
+        }
+
+        return answer;
+    }
+
+    private static boolean checkPair(String s){
+        Stack<String> st = new Stack<>();
+
+        for(int i=0; i<s.length(); i++){
+
+            if (!st.empty()) {
+                if (")".equals(s.substring(i, i + 1))) {
+                    if (!"(".equals(st.peek()))
+                        return false;
+                    if ("(".equals(st.peek())) {
+                        st.pop();
+                        continue;
+                    }
+                } else if ("}".equals(s.substring(i, i + 1))) {
+                    if (!"{".equals(st.peek()))
+                        return false;
+                    if ("{".equals(st.peek())){
+                        st.pop();
+                        continue;
+                    }
+                } else if ("]".equals(s.substring(i, i + 1))) {
+                    if (!"[".equals(st.peek()))
+                        return false;
+                    if ("[".equals(st.peek())) {
+                        st.pop();
+                        continue;
+                    }
+                }
+            }
+
+            st.push(s.substring(i,i+1));
+        }
+
+        if(st.empty())
+            return true;
+        return false;
+    }
 
 }
